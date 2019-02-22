@@ -1,0 +1,248 @@
+<?php 
+$id = $_SESSION['id'];
+?>
+  <body>
+    <div class="top" > 
+            <div  id="irineu">   
+                    <form id="formu" action="../updates/img_perfil.php" enctype="multipart/form-data" method="POST">        
+              <img class="perfil" src="<?php echo $imagemL?>">   
+              <label class="cim" for='selecao-arquivo'>alterar</label>
+              <input class="cim" id='selecao-arquivo' name="img_perfil" type='file' onchange="submit();"> 
+            </form>        
+        </div>  
+          
+
+    
+    <div class="java">
+<br><br>
+                    <button class="primary" id="b1"> Lista de presente </button>
+                    <button class="primary" id="b2"> Principal </button>
+                    <button class="primary" id="b3"> Convidados </button>
+                    <button class="primary" id="b4"> Favoritos</button>
+                    <button class="primary" id="b5" onclick="deslogar()"> Desloga</button>
+                    <br><br>
+       </div>        
+
+       <div class="f1">
+              
+            <div id="um">                                         
+                    <table>                          
+                                <tr>
+                                    <th>Presente:</th>
+                                    <th>Status:</th>
+                                    <th>Deletar</th>
+                                </tr>
+                        <?php 
+                        $r = 0;
+                        while($r < count($dadosPres)){
+                        
+                     ?>  
+                     
+                        <div class="l1">  
+                        <tr>                         
+                            <form action="../deletes/list_pres.php" method="POST">
+                                <td><a class="pres"> <?php echo $dadosPres[$r]['nome_valor_presente']  ?></a> </td>
+                            <td><a class="co">  <?php echo $dadosPres[$r]['status_presente'] ?></a>  </td>
+                            <input type='hidden' name='nomePres' value="<?php echo $dadosPres[$r]['nome_valor_presente']  ?>">
+                           <td> <INPUT type="submit" value="Excluir" class="cma" id="ma"></td>   </form>                                                                                
+                        </tr>
+                        </div>
+                    
+                        <?php  $r++; } ?> 
+                    </table>                                          
+
+                                                                    
+                    </div>
+                    <br><hr class="w">
+                    <div class="listapresentecampo" id="campoAdd">
+                        <table>
+                        <form action="../perfil/ListaPresente.php" method="post"  >
+                            <tr>
+                                <td> <Input type="text" name="nomePresente" placeholder="Nome ou Valor do Presente"></td>
+                                <td> <Input type="radio" name="tipoPresente" id="campo002" value="Material" checked><label for="campo002">Material Ex: Geladeira</label></td>
+                                <td>  <Input type="radio" name="tipoPresente" id="campo001" value="Dinheiro"><label for="campo001">Dinheiro Ex: R$100,00</label></td>
+                            </tr>
+
+                            <tr>
+                                <td> <a id="cancelaadd" onclick="asd(2);">Cancela</a></td>
+                                <td> <button class="add" id="enviandoAdd">Salvar Lista</button></td>
+                            </tr>
+                        </Form>
+                        </table>  
+                    </div>
+                    
+                <button type="button" class="add" onclick="asd(1);" id="abrirAdd">Adicionar</button>
+                <br> <br> <br> <br>  
+
+                </div>   
+                           
+       </div>
+
+                    <div class="f2">
+                            <p class="casal"><?php echo "$nome e $parceiro" ?></p><br>
+                         
+                            <div class="princ">
+                                <form action="../updates/attLocCas.php" method="POST" id="formula">
+                                    <a  class="edit" id="editbtn" onclick="formulario();">Editar</a>
+                                    <br>
+                                    <label id="prin">Dia:</label>
+                                   <span class="principal_esconde"><?php echo date('d/m/Y', strtotime($diaCas)); ?></span>
+                                   <input type="date" name="dia" class="form" >
+                                    <br><br>
+                                                                                    
+                                   <label id="prin">Horário:</label>
+                                   <span class="principal_esconde"><?php echo $horarioCas ?></span>
+                                   <input type="datetime" name="hora" class="form" placeholder="Ex: xx:xx">
+                                  <!--<a href="" class="edit">Editar</a>-->
+                                   <br><br>
+                              
+                                   <label id="prin">Local:</label>
+                                   <span class="principal_esconde"> <?php echo $localCas; ?></span>
+                                   <input type="text" name="local" class="form"  ><br><br>
+                                  <input type="submit" class="form" id="poin" value="Salvar">
+                                    
+                                </form>
+                            </div> 
+                            <form id="formu" action="../updates/img_localCasamento.php" method="POST" enctype="multipart/form-data">    
+                            <div class="b">                  
+                            <img class="galeria3" src="<?php echo $imagemLoc ?>">
+                            <label class="at" for='selecao-arquivo2'>alterar</label>
+                            <input class="at" id='selecao-arquivo2' type='file' name="img_local" onchange="submit();"> 
+                            </div>
+                            </form>
+                            <br>      
+                    </div>
+
+                    <div class="f3">
+                            <p class="casal"><?php echo "$nome e $parceiro" ?></p>    <br>
+                            <p class="c">Meus convidados:</p>
+                            
+                    
+                            <div class="conv">
+                                    <div id="campocopia">
+                                            <input type="text" id="link" name="link" value='<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]?codigo={$_SESSION["id"]}&par={$_SESSION["defini"]}";?>'  readonly="true">
+                                            
+                                            <button onclick="copiarTexto()" class="btncopia">Copiar Link</button>
+                                            </div><br>
+                                            <table>
+                                                <tr>
+                                                    <th>Nome:</th>
+                                                    <th>Presença:</th>
+                                                    <th>Acompanhantes:</th>
+                                                </tr>
+                                <?php  $cConv = 0; while($cConv < count($dadosConv)){    ?>
+                                    <tr>
+                                <td><a class="pres"><?php   echo $dadosConv[$cConv]['nome_convi']?></a></td>
+                            <td><a class="pres"><?php   echo $dadosConv[$cConv]['presenca']?></a></td>
+                            <td><a class="pres"><?php     echo $dadosConv[$cConv]['num_acomp'] ?></a><br></td>
+                            </tr>
+                                    <?php $cConv++; } ?>
+                                            </table>
+                                </div>
+                    </div>
+
+                    <div class="f4">
+                            <p class="casal"><?php echo "$nome e $parceiro" ?></p>    <br> <br>
+
+                            <p id="l">Meus favoritos:</p>
+                            <?php  $fC=0; while($fC < count($dadosFav)){ 
+                                 ?>
+                           <a href="../produto/index.php?cod=<?php echo $dadosFav[$fC]['cod_produto']; ?>"><img class="fav1" id="l" src="<?php echo$dadosFav[$fC]['url_foto_prod']; ?>"></a>
+                           <?php  $fC++;}?>
+                    </div>                   
+    </div>
+              
+   
+
+<script>
+    var b1 = document.querySelector("#b1");
+    var b2 = document.querySelector("#b2");
+    var b3 = document.querySelector("#b3");
+    var b4 = document.querySelector("#b4");
+
+    var f1 = document.querySelector(".f1");
+    var f2 = document.querySelector(".f2");
+    var f3 = document.querySelector(".f3");
+    var f4 = document.querySelector(".f4");
+
+    f1.style.display = "none";
+    f3.style.display = "none";
+    f4.style.display = "none"; 
+   
+
+
+    b1.addEventListener("click",function(){
+        f4.style.display = "none"; 
+        f3.style.display = "none";
+        f2.style.display = "none";
+        f1.style.display = "block";
+       
+    })
+
+     b2.addEventListener("click",function(){
+        f1.style.display = "none";
+        f3.style.display = "none"; 
+        f4.style.display = "none";         
+        f2.style.display = "block";
+       
+     
+    })
+    b3.addEventListener("click",function(){
+        f1.style.display = "none";
+        f2.style.display = "none";
+        f4.style.display = "none";         
+        f3.style.display = "block"; 
+                 
+    })  
+
+    b4.addEventListener("click",function(){
+        f1.style.display = "none";
+        f2.style.display = "none"; 
+        f3.style.display = "none";        
+        f4.style.display = "block";         
+    })
+    function copiarTexto() {
+    var textoCopiado = document.getElementById("link");
+    textoCopiado.select();
+    document.execCommand("Copy");
+  }
+
+  function deslogar(){
+    location.href='../perfil/deslogar.php' ;
+  }
+    var xs = 1;
+    function formulario(){
+       
+       if(xs == 1){
+           $(".form").css("display", "inline");
+           $(".principal_esconde").css("display", "none");
+           $("#editbtn").text("Fechar");
+           xs ++;
+       }else{
+        $(".form").css("display", "none");
+           $(".principal_esconde").css("display", "inline");
+           $("#editbtn").text("Editar");
+           xs -- ;
+       }
+    }  
+   //-------------------------------------------------------//
+                  function mostra(id){
+                    if (document.getElementById(id).style.display == 'block'){
+                    document.getElementById(id).style.display = 'none';                       
+             }else{document.getElementById(id).style.display = 'block'; }  
+            }           
+
+             function submit(){
+                 document.formu.submit();
+             }
+             
+
+             function asd(x) {  
+                 if(x == 1){
+                    $("#campoAdd").css("display","inline");
+                 }else{
+                    $("#campoAdd").css("display","none");
+                 }
+        }
+             </script>
+  </body>

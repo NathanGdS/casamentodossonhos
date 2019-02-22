@@ -1,0 +1,776 @@
+
+#container header{
+    height: 100px;
+ }
+ #logo{width: 90px;}
+ #logo{ margin:  10px}
+  #user_icone, #loja_icone{margin: 0px 15px 0 5vw; width: 60px;}
+  #icones_topo{ position: absolute;left: 70vw; top: 10px}
+  #container header form input{
+    position: relative;
+    margin: 15px 0 0 56px;
+  }
+  #container header form input:first-child{
+    width: 480px;
+    padding-left: 68px;
+    font-size: 20px;
+    height: 50px;
+    margin-top: 20px;
+  }
+  #container header form input:last-child{
+    top: 10px;
+    right: 510px;
+   }
+
+
+/*------------------------- pagina 1 --------------- */
+figure figcaption p{
+    width: 880px;
+    font-size: 40px;
+}
+figure figcaption{left: calc(48vw - 350px); top: 320px; height: 400px; width: 800px;}
+
+figure figcaption a{
+  margin: 0px 90px 0 90px;
+  width: 880px;
+  font-size: 40px;
+}
+#container main section figure{ height: 800px; overflow: hidden;}
+
+  /* ------------------------pagina 2 ---------------- */
+
+    #nos h2{font-size: 42px}
+    #nos p{
+      font-size: 33px;
+    line-height: 50px;
+    width: 800px;
+    margin-left: calc(48vw - 480px);
+    }
+
+
+  /* ---------------------- carrossel ------- */
+
+  #carrossel{ width: 99.8%; height: 400px; border: 1px solid black; background-color: white}
+  #caixa{top: 87.5px; left: calc(49vw - 9vw - 400px);}
+  #caixa img{width: 400px;}
+  #caixa img:nth-child(2){height: 225px;  padding-left: 18vw}
+  #caixa img:last-child, #caixa img:nth-child(3){display: none;}
+  
+
+/*-------------navegação---------*/
+#c{display: none;}
+footer{background-color: #f6dddf; padding: 10px; display: flex; align-items: center; font-size: 21px;}
+footer a{text-decoration: none; color: black; position: absolute; left: -65px;}
+footer p{margin-left: 85%}
+  /*--------------------------------loja----------------------*/
+
+  #caixa_produtos{padding: 10px 60px}
+  .produto_loja {
+    width: 240px;
+    height: 240px; 
+    display: inline-block; 
+}
+
+.oi{
+  width: 200px;
+  height: 170px;
+  margin: 40px 10px 10px 10px ;
+  border-radius: 20px;
+}
+
+.nome_descricao{
+position: relative;
+}
+
+.nome_descricao h3{
+position: relative;
+font-size: 25px;
+text-align: left;
+bottom:235px;
+left: 10px;
+width: 220px;
+height: 27px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow:  ellipsis;
+}
+
+.nome_descricao p{
+  float: left;
+  position: relative;
+  font-size: 20px;
+  left: 10px;
+  bottom:225px;
+  display: none; 
+
+}
+.produto_loja:hover .oi img{opacity: 0.2;}
+
+.produto_loja:hover .nome_descricao p{  
+  display: -webkit-box;
+  max-width: 220px;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+  #Categoria_icones a img{
+    width: 17%;
+  }
+  
+  /*-------produto------------*/
+   
+  img.ffr{
+    width:55%;
+    height: 80%;
+    object-fit: cover;
+    object-position: center;
+    margin-top:20px;}
+
+      #valorP{
+        display: flex;
+        margin-top: 6%;
+        justify-content:space-around
+        }
+        #valorP h2 {
+          margin-top: -11%;
+          margin-left: 77%;}
+    
+      #valorP a{  
+        margin-top: 10%;
+        margin-left: -23%;   
+        padding: 2.5% 3% 2.5% 3%;
+        background-color: #169BD5;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+    
+      #all_icones{
+        margin-top: 10.5%;
+        width: 43%;
+        height: 40px;
+        background-color: #f6dddf;
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 48%;
+        position: absolute;
+      }
+      #PrimeiraCaixa{height: 144px; overflow: auto;}
+      #SegundaCaixa{width: 130%;display: block; float: left; margin: 41% 0% 0% -162%;border: 1px solid black;
+         padding: 4% 8% 9% 4%;}
+      #SegundaCaixa a img{width: 105px; margin-left: 22px; margin-top: 22px;float: right;}
+      #SegundaCaixa article h3{margin-top: 3px; font-size: 15px}
+      #SegundaCaixa article h2{ font-size: 20px}
+
+      #descrip_produto{
+        width: 39%;
+        border: 1px solid black;
+        margin-top: -55%;
+        margin-left: 60%;
+        padding: 2% 15% 3% 3%;   
+      }  
+      #produto{margin: 40px 30px; width: 80%}/*conserta em cada pagina de css*/
+      #SobreProduto{
+        color:#5E5E5E;
+        font-family: Arial, Helvetica, sans-serif;  
+        font-size: 2vw;
+      }
+     
+      #MensagemEnviar{display: none;}
+      .digi{display: none;}
+      
+      #btnForm{position: absolute; top:410px; right: 19%;}   
+    
+      #all_icones img{width: 42px;}
+
+      .one{
+        display: none;
+      }
+
+      #all_icones a img{ width: 55px;}
+/*mensagem*/ 
+.msg2{
+  display:none;
+  background-color: pink;
+  width: 400px;
+  height: 300px;
+  border: 1px solid;
+  position: fixed;
+  left: calc(50vw - 200px);
+  bottom:10vw;
+  border-radius: 10px;
+  
+}
+  .clos{
+    background-color: antiquewhite;
+    padding:2% 7% 5% 7%;
+    text-decoration: none;
+    color: black;
+    word-spacing:6px;    
+    float: right;
+    border-radius: 10px 10px 0px 0;
+  }
+
+  label.name{
+   text-align: center;
+   padding-top:11px;
+   border-radius: 10px 10px 0px 0;
+   display: block;
+   font-size: 23px;
+  }
+  .ms{
+  width: 95%;
+  height: 200px;
+  font-size: 16px;
+  padding: 10px;
+  }
+  /*Enviar*/
+  .go{
+    width:28px;
+    float: right;
+    margin-right: 2%
+  }
+
+    
+     /*-----------------------------------perfilCliente.html---------------------*/
+/*LISTA DE PRESENTE*/
+div.tipo{
+    word-spacing: 120px;
+    padding-left: 28px; 
+  }
+  
+  div.lista1{     
+    padding-left: 2px;     
+    font-size: 16px;     
+  }
+  
+  div.lista2 {     
+    float: left;
+    padding-left: 12%;   
+  }
+  
+  a.presente{
+    float: left;   
+    padding-left: 14px;   
+    font-size: 35px;
+  }
+  
+  select.custom-select{
+    float: right;
+    height: 5vw;
+    width: 17vw;
+    font-size: 2.5vw;
+    padding-top: 1px;
+   }
+  
+  div.email{    
+    float: right;    
+  }
+  
+  input.e{
+    margin-right: 3vw;
+    margin-left: 2vw;
+    height: 3vw;
+    width: 24vw;
+    margin: 10px 0;
+    font-size: 1.5vw;
+  }
+  
+  p.texto{
+    font-size: 3vw;
+  }
+  
+  /*botao enviar*/
+  .confirma{
+    border-radius: 6px;
+    background-color: pink;
+    border-color:pink;
+    width: 7vw;
+    height: 3vw;
+    float: right;
+    font-size: 1.5vw;
+    margin: 10px 0;
+  }
+  
+  hr{
+    margin-top: 3%;
+    padding: 0;
+    border-style: dotted;    
+    border-width: thin;
+    border-color: gray;
+  }
+  
+  
+  
+  div.form-row{
+    display: inline;
+  }
+  
+  /*PRINCIPAL*/
+  /* quadrado com dia local data */
+  div.prin{   
+    background-color: pink;    
+    width:57%;     
+    border-radius: 6px;
+    padding-left: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;          
+    margin-left:6px;
+    margin-top: 6px; 
+  }
+  
+  div.form2{
+    margin-left: auto;       
+  }
+   
+  div.principal{
+    text-align: center;    
+  }
+  
+  /*imagem*/
+  img.galeria3{
+    display: block;
+    margin: 4% auto;
+    width: 70%;       
+  }
+  
+  input.form{
+    width: 57%;
+  }
+  
+  /*botao de cima*/
+  button.btn.btn-primary{
+    background-color:pink;
+    border:solid grey 1px ;    
+    height: 6vw; 
+    width: 32%;
+    margin-left: -6px;
+    font-size: 3vw;           
+  }
+  
+  
+  /*img perfil*/
+  img.perfil{
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;    
+    border-radius: 6px;
+    margin-bottom: -2vw;    
+  }
+  
+  /*CONFIRMAR PRESENÇA*/
+  div.form{
+    margin-top: 0px;    
+  }
+  
+  p#sua{
+    font-size: 3vw;
+  }
+  
+  div.group2{
+    border-color:grey;
+    border-style: dotted;    
+    border-width: thin;
+    border-top-width: 0px;
+    padding-top: 0;     
+  }
+  
+  div.conf1{       
+    float: left;
+  }
+  
+  div.conf{
+    float: right;
+    margin-right: 12vw;
+  }
+  
+  img.letra{   
+    float: right;
+    width: 14%;
+  }
+  
+  h3{
+    margin: 0;
+    text-align: left;
+  }
+  
+  p{
+     margin:0;    
+  }
+  
+  button.botao{   
+    background-color: pink;
+    border-radius: 6px;
+    border-color: pink;    
+    height: 6vw; 
+    width: 20%;   
+    font-size: 2vw;
+    margin: 70px 10px 10px 74vw;
+  }
+  
+  select.select1{
+     width: 382px;
+     height: 22px;
+     border-color: rgb(169, 169, 169);
+  }
+  
+  p.casal{
+     text-align: center;
+     font-size: 3vw;
+  }
+  
+  input.form-control{
+    width: 82vw;
+    height: 3vw;
+    font-size:25px;
+  }
+  
+  input#cel{
+    width: 40vw;
+    height: 3vw;
+  }
+  
+  select.select1{
+    width: 83vw;
+    height: 4vw;
+    font-size:25px;
+  }
+  
+  select.select2{
+    width: 120%;
+    height: 4vw;
+    border-color: rgb(169, 169, 169);
+    font-size:25px;
+  }
+
+
+  /*--------------LOGADO--------------*/
+a.edit{
+  text-decoration: none;
+  color: #4F4E4E;
+  float: right;
+  padding-right: 6%;
+}
+
+#b1{
+  background-color: pink;
+  border: solid grey 1px;
+  height: 4vw;  
+  margin-left: -2px;
+  font-size: 110%;
+}
+
+/*imagem*/
+
+
+input.form{
+  width: 57%;
+}
+
+/*botao de cima*/
+button.btn.btn-primary{
+  background-color:pink;
+  border:solid grey 1px ;    
+  height: 6vw; 
+  width: 25%;
+  margin-right: -6px;
+  font-size: 140%;
+}
+.java{margin-left: 10px}
+.primary{   
+  background-color:pink;
+  border:solid grey 1px ;    
+  height: 4vw; 
+  width: calc( 100% / 5) ;
+  margin-right: -5px;
+  font-size: 110%;
+}
+.primaryA{   
+  background-color:pink;
+  border:solid grey 1px ;    
+  height: 4vw; 
+  width: calc( 99.7% / 4) ;
+  margin-right: -5px;
+  font-size: 110%;
+}
+
+div.conv{
+  border-color: grey;
+  border-style: dotted;
+  border-width: thin;  
+  margin: 2% 5% 2% 5%;
+  padding: 3% 8% 3% 8%;
+}
+
+label.qtd{
+  float: right; 
+  font-size: 2.5vw;   
+}
+
+label.nm{
+  font-size: 2.5vw;
+}
+p.c{
+  padding-left: 5%;
+  font-size: 2.5vw;
+} 
+
+a.pres{
+  padding-left: 28px;
+}
+a.co{
+  padding-left: 12%;
+}
+
+hr.w{
+  margin: 0 auto;
+  margin-top: 2%;}
+
+.cma{
+    border-radius: 6px;
+    background-color: pink;
+    border-color:pink;
+    padding:1% 2% 1% 2%;
+    float: right;
+    font-size: 1.5vw;
+  }
+
+ div.princ{   
+    background-color: pink;    
+    width:40%;      
+    border-radius: 6px;
+    padding-left: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;          
+    margin-left:6px;
+    margin-top: 6px; 
+    font-size: 2vw;
+ }  
+
+
+    
+.l1{
+font-size: 2.5vw;
+}
+
+/* --------------botao editar de baixo---------*/
+/* Esconde o input */
+input.at[type='file'] {
+  display: none}      
+
+label.at { 
+border-radius: 6px;
+font-size: 3vw;
+cursor: pointer;
+margin: -50% 0% 0% 70%;
+padding: 7px 24px;
+position: absolute;
+background: #ffc0cbbd;
+/* 
+top: 75vw;
+left: 80%;
+*/    
+}
+/*botao alterar de cima*/
+input.cim[type='file'] {
+display: none}      
+
+label.cim { 
+border-radius: 6px;
+font-size: 3vw;
+cursor: pointer;
+margin: -3% 0% 0% 67%;
+padding: 4px 11px;
+position: absolute;
+background: #ffc0cbbd; }
+.b {  
+  position:relative;
+}
+.b button {
+  font-size: 2vw;
+  border: 0px;
+  position:absolute;
+  top: -3.5vw;
+  left: 81.5%;
+  background: #ffc0cb8c;
+  border-radius: 6px;
+  /*-webkit-transform:translate3d(-50%, -50%, 0); 
+  transform:translate3d(-55%, -50%, 0);*/
+}
+#irineu{
+  position:relative;
+  margin-bottom: 2%;
+  margin-top: 10px;
+}
+
+#irineu button{
+  font-size: 2vw;
+  border: 0px;
+  position:absolute;
+  top: 1vw;
+ left: 68%;
+  background: #ffc0cb8c;
+  border-radius: 6px;
+  /*-webkit-transform:translate3d(-50%, -50%, 0); 
+  transform:translate3d(-55%, -50%, 0);*/
+}
+
+.add{
+  margin-top: 1%;
+  margin-left: 4%;
+  border-radius: 6px;
+  background-color: pink;
+  border-color:pink;
+  padding:1% 2% 1% 2%;
+  float: left;
+  font-size: 1.5vw;
+}
+
+.edit{
+  font-size: 2vw;
+}
+
+input.form{
+  background-color: pink;
+  border-color:pink;
+  border: 0px;   
+  font-size: 2vw;  
+}
+
+/*favoritos*/
+
+#l{
+  width: 22%;
+  margin: 1%;
+  font-size: 2.5vw;
+}
+
+/*---------------CLIENTE ADM--------------*/
+
+.pri{
+  background-color:pink;
+  border:solid grey 1px ;    
+  height: 4vw;
+  width: 33.5%;
+  margin-left: -6px;
+  font-size: 140%;  
+}
+
+/*----------PERFIL VENDEDOR -----------*/  
+#TopoVendedor h1{float: right; margin-right: 30%; font-size: 4vw;}
+#TopoVendedor img{
+   width:220px;
+   height: 123px;
+ }
+ #LNIP{width: 210px;}
+#FonT{font-size: 17px}
+#InserirN{width: 35vw; font-size: 20px}
+.ETeste{bottom: 145px; left: 20px; font-size: 17px; height: 30px;}
+#tv{
+   width:102px;
+}
+#MenuVendedor img{
+   margin: 10px 10px;
+}
+#MenuVendedor ol{height: 40px; font-size: 27px}
+
+ #FotosVendedor img, #ProdutosVendedor img, #ProdutosVendedorL img{width: 220px;}
+ #ProdutosVendedor, #ProdutosVendedorL{display: none}
+
+ div#InfoVendedor h2{
+   font-size: 2.5vw;
+  }
+
+ h3{
+    font-size:  1.5vw;
+  }
+  .btnPF a{
+    font-size: 35px
+  }
+  /*modal das imagens*/
+  .modal-content {
+    width: 30%;
+  }
+  .dsFoto{
+    width: 100%;
+    height: 75px;
+    top: calc(99% - 75px);
+    background-color: rgba(220,290,255,0.4); 
+}
+.dsFoto p{color: black}
+
+  /* nao logado*/
+
+  #prod{margin-left: 3% }
+  #prod img{
+   width: 152px;
+   margin-top: 10px;
+   margin-left: 1%;  }
+
+  /* produto*/
+   #SobreProduto h1{font-size: 5.5vw;}
+
+/*---------------------------------------------ALL USER--------------------*/
+.pes{
+margin-top: 0px;
+float: right;  
+border-radius: 10px;
+padding: 1% 2% 1% 2%;
+font-size: 3vw;
+border-color: pink;
+background-color: pink;
+}
+
+      
+  .fil{
+    width: 14%;
+  }
+  
+  .x{width: 10%; float: right}
+  
+  div.camp{
+    margin:2%;
+    padding: 0% 2% 2% 0%;
+  }
+  
+  #yz{
+    margin-left: 3%; 
+    margin-top: 2%; 
+    padding-right: 20%;
+    width: 500px;
+    height: 40px;
+    font-size: 2vw
+  }
+  #preview{
+    height: 10vw;
+  }
+  
+   /*fatality*/
+ #campocopia{width: 100%; height: 35px;position: relative; margin: auto;}
+ #campocopia input{ font-size: 20px}
+ #campoAdd:nth-child(6){ width: 350px; height: 25px; border: 1px solid}
+ 
+ .produto_loja img{width: 197px; margin-left: -10px;height: 150px;}
+
+ .somenteE{
+  border: 1px solid;
+  background-color: white;
+  width: 550px;
+  padding: 10px;
+  margin: 5%;
+  box-shadow: -2px 2px 5px 1px #000;
+  position: absolute;
+  top: 20%;
+  left: 2vw;
+}
+#cC{ width: 300px; font-size: 20px}
+.x2{width: 50px; float: right; filter: saturate(10%);}
+.x2:hover{filter: saturate(100%);}
+.LadoLado{display: inline-block; margin: 0 10px;}
+.LadoLado input{ margin: 0 10px}
+#AU{ padding: 5px ;border-radius: 7px; border:none;background-color: #f2717b; color: white}
+#AU:hover{padding: 4px;background-color: white; border: 1px solid #f2717b; color: black}

@@ -1,0 +1,172 @@
+  <body> 
+      <div class="container"> <img class="perfil" src="<?php echo $imagemL ?>" >       
+    <div class="principal">
+<br/><br/>
+            <button class="btn btn-primary" id="btn1">   Lista de presente </button>
+            <button class="btn btn-primary" id="btn2">   Principal </button>
+            <button class="btn btn-primary" id="btn3">   Confimar presença </button>
+            <br/><br/>
+    </div>        
+               <div class="form1">
+                    <p class="casal"></p><br>
+                    <p class="texto">Marque o presente!</p><br><br>
+                
+                                           
+                    <div class="form-row">
+                                <table>                          
+                                            <tr>
+                                                <th>Presente:</th>
+                                                <th>Status:</th>
+                                                <th>Confirma</th>
+                                            </tr>        
+                                            <br>
+                        <?php $p = 0; while($p < count($dadosPres)){ ?>   
+                                <tr>
+                                 <form id="um" method="POST" action="../perfil_cliente/confirmConvite.php">
+                                    <td class="lista1">
+                                        <a class="presente"> <?php echo $dadosPres[$p]['nome_valor_presente']  ?></a> 
+                                    </td>                                 
+                                    <td >                                    
+                                        <a class="presente"><?php echo $dadosPres[$p]['status_presente'] ?></p>
+                                    </td>
+                                    <td id="mb" class="Email">
+                                        <input type="hidden" name="iDD" value="<?php echo $dadosPres[$p]['cod_list_pres'];?>">
+                                        <input type="hidden" name="idD" value="<?php echo $_GET['codigo'];?>">
+                                        <input type="text" id="b" class="e"  size="12" name="confirmEmail" placeholder="Digite seu e-mail">
+                                        <button type="submit" id="b"class="confirma">Enviar</button>
+                                     </td>
+                                 </form>
+                                </tr>
+                                
+                           <?php $p++; } ?>
+                        </table>
+                    </div> 
+
+                    
+                </form>   <br><br><hr>                    
+            </div>
+
+                <div class="form2">
+                        <p class="casal"><?php echo " $nome e $parceiro"; ?></p>
+                 
+                     <div class="princ">
+                            <label id="prin">Dia: <?php echo $diaCas ?></label><br>
+                          <!--   <input type="number" class="form" id="" placeholder="xx/xx/xxxx" size="10"><br>-->
+                          <br>                             
+                            <label id="prin">Horário: <?php echo $horarioCas ?></label><br>
+                          <!--  <input type="text" class="form" id="" placeholder="19:00" size="10"> -->
+                          <br>
+                            <label id="prin">Local: <?php echo $localCas ?></label><br>
+                           <!-- <input type="text" class="form" id="" placeholder="Endereço" size="25"><br>-->
+                     </div>                       
+                     <img class="galeria3" src="<?php echo $imagemLoc ?>" ><br>                                                                                                                                          
+                </div>
+
+                       <div class="form3">
+                            <p class="casal"><?php echo " $nome e $parceiro"; ?></p>
+                              <form method="POST" action="../perfil_cliente/cadastroConvidado.php">
+                         <div class="group2">
+                                            <img class="letra" src="<?php echo $imagemLoc ?>"><br><br>
+
+                                            <h3>Convite</h3>                                                
+                                            <p id="sua">Sua presença é muito importante em um momento tão especial.</p>
+                                            <br>
+                                      <label >Nome:</label><br>
+                                      <input type="nome" name="nome_convi" class="form-control" id="nome" aria-describedby="emailHelp" placeholder="Digite seu nome" size="50">
+                                    <br><br>
+                                    <div>
+                                            <label >Acompanhantes:</label><br>
+                                            <select class="select1" size="" name="acomp">
+                                                    <option selected >Selecione</option>
+                                                    <option value="1" > 1 acompanhante</option>
+                                                    <option value="2"> 2 acompanhantes</option>  
+                                                    <option value="3"> 3 acompanhantes</option> 
+                                                    <option value="4"> 4 acompanhantes</option>             
+                                            </select>
+                                        </div><br>                                            
+
+                                    <div class="">
+                                      <label >E-mail:</label><br>
+                                      <input type="email" name="email" class="form-control" id="email" placeholder="casamentodossonhos@gmail.com" size="50" >
+                                    </div><br>
+
+                                    <div class="conf1">                                                
+                                            <label>Celular:</label><br>
+                                            <input type="number" name="celular" class="form-control" id="cel" placeholder="(xx)xxxx-xxxx">
+                                    </div>
+
+                                <div class="conf">
+                                    <label>Presença:</label><br>
+                                    <select class="select2" name="confirm">
+                                            <option class="a" selected >Selecione</option>
+                                            <option class="a" value="Confirmo Presença" >Confirmada</option>
+                                            <option class="a" value="A decidir" >A decidir</option>
+                                            <option class="a" value="Não poderei Comparecer">Cancelada</option>              
+                                    </select>
+                                </div>                 <br><br><br><br>
+                                    <input type="hidden" name="idD" value="<?php echo $_GET['codigo'];?>">
+                                    <button class="botao">Confirmar</button>
+                             </div>
+                                </form>
+                           </div>     
+</div>
+
+
+<script>
+var btn1 = document.querySelector("#btn1");
+var btn2 = document.querySelector("#btn2");
+var btn3 = document.querySelector("#btn3");
+
+var form1 = document.querySelector(".form1");
+var form2 = document.querySelector(".form2");
+var form3 = document.querySelector(".form3")
+
+form1.style.display = "none";
+// form2.style.display = "none";
+form3.style.display = "none";
+
+
+
+btn1.addEventListener("click",function(){
+form3.style.display = "none";
+form2.style.display = "none";
+form1.style.display = "block";
+
+})
+
+btn2.addEventListener("click",function(){
+form1.style.display = "none";
+form3.style.display = "none";        
+form2.style.display = "block";
+
+
+})
+btn3.addEventListener("click",function(){
+form1.style.display = "none";
+form2.style.display = "none";
+
+form3.style.display = "block";
+ 
+})  
+//-------------------------------------------------------//
+</script>
+<style>
+    .email{
+        display:none;
+    }
+    
+  input.checkbox{
+        display: block;
+    }
+    </style>
+    
+    <script>
+        function mostra(id){
+            if(document.getElementById(id).style.display == 'block'){
+               document.getElementById(id).style.display = 'none';
+
+       }else{document.getElementById(id).style.display = 'block'}
+    }
+</script>                         
+           
+</body>

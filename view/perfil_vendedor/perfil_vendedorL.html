@@ -1,0 +1,210 @@
+   
+            <main>
+                <section id="vendedor">
+                 <div id="TopoVendedor">
+                    <p class="btnAlterar" id="btnFe" onclick="editarTopo()">Editar</p>
+                    <h1 class="SumiuTopo"><?php echo $nome ?></h1>
+                    <img src="<?php echo $imagemL ?>" class="SumiuTopo">
+                    <form method="POST" enctype="multipart/form-data" action="../updates/img_nome_perfil_vendedor.php">
+
+                    <img src="<?php echo $imagemL ?>" class="ETopo" id="vejanovafoto">
+                    <label for="nip" id="LNIP" class="ETopo">Escolhe Arquivo</label>
+                    <input type="file" name="fotoPV" id="nip">
+                    
+                    <h1 class="ETeste"><input type="text" name="nomePV" placeholder="Novo Nome" class="ETopo" id="InserirN"></h1>
+                     <fieldset class="ETopo btnPF" style="margin: 10px 0 0 0;">   
+                            <button class="SalvarA" id="FonT">Salvar</button>
+                            <div class="cor"></div>
+                            </fieldset>
+                    </form>
+                 </div>
+                 <div id="InfoVendedor">
+                     <h2>Descrição</h2>
+                     <article>  
+                         <form method="POST" action="../updates/descricao_vendedor.php">
+                       <h3 class="btnXa" >Categoria do Vendedor: <?php echo $funcE ?></h3>
+                       <select name="novaCategoria" class="EDescricao">
+                           <option selected>Nova Categoria</option>
+                           <?php 
+                              $p = 0;while($p < count($dadosCat)){?>                                      
+                              <option  value="<?php echo $dadosCat[$p]['nome_categoria']  ?>"><?php echo $dadosCat[$p]['nome_categoria']  ?>
+                           <?php  $p++; } ?>
+                       </select>
+                       <h3 class="btnXa">Telefone: <?php echo $telE ?></h3>
+                       <input type="tel" name="novoTel" class="EDescricao" placeholder="Novo Telefone">
+                       <p class="btnAlterar" id="FechaD" onclick="editarDescricao()">Editar</p>
+                       <h3 class="btnXa">Endereço: <?php echo $ruaE. " - ".$bairroE." - ". $cidadeE. " - ". $estadoE; ?></h3>
+                       <input type="text" name="novaRua" class="EDescricao" placeholder="Nova Rua">
+                       <input type="text" name="novoBairro" class="EDescricao" placeholder="Novo Bairro">
+                       <input type="text" name="novaCidade" class="EDescricao" placeholder="Nova Cidade">
+                       <input type="text" name="novoEstado" class="EDescricao" placeholder="Novo Estado">
+                       <input type="submit" value="Salvar" class="EDescricao">
+                    </form> 
+                    </article>
+                 </div>
+                 <div id="MenuVendedor">
+                    <ol>
+                        <li>Fotos</li>
+                        <li>Produto</li>
+                        <li onclick="adicionar();">Adicionar</li>
+                        <li>deslogar</li>
+                    </ol>
+                    <div id="FotosVendedor">
+                        
+                         <?php  $cF2=0;
+                            if($cF2 < count($dadosFot)){
+                                while($cF2 < count($dadosFot)){ ?>
+                                    <div class="Fcampo">
+                                <img src="<?php  echo $dadosFot[$cF2]['url_foto_empresa']; ?>" class="hover-shadow cursor" onclick="openModal();currentSlide(<?php echo $nufo;?>)"><br>
+                            <!-- ------- ------------- garcia esse é o excluir foto  --------------- ---------->    
+                                <form class="orta">
+                                    
+                                <a href="../deletes/foto_vend.php?cod_foto_empre=<?php  echo $dadosFot[$cF2]['cod_foto_empre']; ?>">Excluir</a>
+                                <a href="#" <?php  echo "onclick='myfunction(". $dadosFot[$cF2]['cod_foto_empre'] . ")'";  ?> >Editar</a>
+                                    </form>
+                                </div>
+                                <?php $cF2++;} }else{echo "<h1>Você não tem nenhuma Foto!<h1>";}?>
+                             <!-- ------- ------------- garcia esse é o editar foto  --------------- ---------->   
+                                <div class="moda" id="FEditar">
+                                    <a href="#" class="isoclose">&#215;</a>
+                                    <h4>Editar Foto</h4>
+                           
+                                    <form action="../updates/foto_vend.php" method="post" enctype="multipart/form-data" id="formeditar">
+                                        <input type="name" name="nomefoto" placeholder="Novo Nome" id="novonomejj">
+                                        <div id="quadrof">
+                                        <img id="veja" alt="Nova imagem" width=" 50px">
+                                        </div>
+                                        <input type=file id=Trocaimagem name="EImagem" >
+                                        <textarea style="resize: none" placeholder="Nova Legenda" name="descFoto"></textarea>
+                                        <input type="hidden" id="codfoto" name="codfoto">
+                                        <input type="submit" value="Salvar">
+                                    </form>
+                                    
+                                    </div>
+                                    
+                                    <div id="fundoE"></div> 
+                    </div>
+                    
+                     
+                    <div id="ProdutosVendedorL">
+                                    <?php 
+                                        $l = 0;
+                                        if($l< count($dadosProd)){
+                                        while($l < count($dadosProd)){ ?>   
+                                            <div class="Pcampo">
+                                                    <a href="../produto/index.php?cod=<?php echo $dadosProd[$l]['cod_produto']; ?>">
+                                                    <img src="<?php echo $dadosProd[$l]['url_foto_prod']; ?>" alt="imagem<?php echo $l ?>">
+                                                    </a>
+                                        <!-- ------- ------------- garcia esse é o excluir produto  --------------- ---------->            
+                                                    <form class="orta">
+                                                    
+                                                        <a href="../deletes/prod_vend.php?cod_prod=<?php  echo $dadosProd[$l]['cod_produto']; ?>">Excluir</a>
+                                                        <a href="#" <?php  echo "onclick='functionmy(" . $dadosProd[$l]['cod_produto'] . ")'";  ?> >Editar</a>
+                                                        </form>
+                                                    </div>
+                                                    <?php $l++; } }else{echo "<h1>Você não tem nenhum Produto!</h1>";}?>
+                                
+                               
+                                        <!-- ------- ------------- garcia esse é o editar produto  --------------- ---------->
+                                    <div class="modinha" id="FEditar">
+                                        <a href="#" class="isoclose">&#215;</a>
+                                        <h4>Editar Produto</h4>
+                                        <form action="../updates/produto.php" method="post" enctype="multipart/form-data" id="produtoform">
+                                            <input type="name" name="nomeproduto" placeholder="Novo Nome">
+                                            <input type="text" name="enderecoproduto" placeholder="Novo Localização">
+                                            <input type="text" name="precoproduto" placeholder="Novo Preço Ex: 98">
+                                            <input type="url" name="linkprod" placeholder="Novo Link">
+                                            <div id="PQuadro" >
+                                            <img id="VejaProduto" alt="Nova imagem" width=" 50px">
+                                            </div>
+                                            <input type=file id=TrocaPimagem name=EImagem >
+                                            <textarea name="descricaoproduto" style="resize: none" placeholder="Nova Descrição"></textarea>
+                                            <select name="novacat">
+                                                <option>Nova Categoria</option>
+                                                <?php 
+                                        $p = 0;while($p < count($dadosCat)){?>                                      
+                                        <option  value="<?php echo $dadosCat[$p]['COD']  ?>"><?php echo $dadosCat[$p]['nome_categoria']  ?>
+                                            <?php  $p++; } ?>
+                                            </select>
+                                            <input type="hidden" id="codproduto" name="codproduto">
+                                            <input type="submit" value="Salvar">
+                                        </form>
+                                        </div>
+                                        <div id="fundoP"></div> 
+                    </div>
+                    <div id="ProdutosFotos" style="display:none"x>
+                        <fieldset class="btnPF">   
+                        <button><a href="#janela2" rel="modal2" class="butn">FOTOS</a></button>
+                        <div class="cor"></div>
+                        </fieldset>
+                        <div class="window" id="janela2">
+                            <a href="#" class="fechar">&#215;</a>
+                            <h4>Cadastro do Foto</h4>
+                            <form action="../foto/cadastroFotoVendedor.php" method="post" enctype="multipart/form-data">
+                                <input type="name" name="nomeFoto" placeholder="Nome Foto" >
+                                <div id="quadroft" style="border:none">
+                                
+                                </div>
+                                <input type=file id=imgChooser name="imgEsc" onclick="criaimg()">
+                                <textarea style="resize: none; height: 50px; padding: 5px" name="descFoto" placeholder="Legenda..."></textarea>
+                                <button class="button">Salvar</button>
+                            </form>
+                        </div>
+                        <div id="mascara2"></div>
+
+                        <fieldset class="btnPF"> 
+                        <button><a href="#janela1" rel="modal">PRODUTOS</a></button>
+                        <div class="cor"></div>
+                        </fieldset>
+                        <div class="window" id="janela1">
+                            <a href="#" class="fechar">&#215;</a>
+                            <h4>Cadastro do Produto</h4>
+                            <form action="../perfil_vendedor/adicionarprodutov.php" method="post" enctype="multipart/form-data" id="formastro">
+                                <input type="name" name="nomeproduto" placeholder="Nome Produto" >
+                                <input type="text" name="localproduto" placeholder="Digite a localização do Produto">
+                                <input type="number" name="precoproduto" placeholder="Digite o Preço Ex: 99">
+                                <input type="url" name="linkproduto" placeholder="Digite o link do produto">
+                                <div id="quadroP" >
+                                
+                                </div>
+                                <input type="file" id="imgChooserP" name="SImagemP" onclick="criaimg2()">
+                                <textarea style="resize: none; height: 50px; padding: 5px" name="descricao" placeholder="Descrição..."></textarea>
+                                 <select name="cat">
+                                        <option selected>Selecione a Categoria:
+                                        <?php 
+                                        $r = 0;while($r < count($dadosCat)){?>                                      
+                                    <option  value="<?php echo utf8_encode($dadosCat[$r]['nome_categoria']);  ?>"><?php echo utf8_encode($dadosCat[$r]['nome_categoria']);  ?>
+                                            <?php  $r++; } ?>
+                                  </select>
+                                <button class="button">Salvar</button>
+                            </form>
+                        </div>
+                        <div id="mascara"></div>
+                    </div>
+                 </div>
+                   
+                </section> 
+                <div id="myModal" class="modal">
+                        <span class="close cursor" onclick="closeModal()">&times;</span>
+                        <div class="modal-content">
+                      <?php $cF=0; while($cF < count($dadosFot)){ ?>
+                          <div class="mySlides">
+                              <h2 class="nomedaFoto"><?php echo $dadosFot[$cF]['nome_foto']; ?></h2>
+                            <img src="<?php echo $dadosFot[$cF]['url_foto_empresa']; ?>" style="width:100%">
+                              <div class="dsFoto">
+                                  <p>
+                                      
+                                      <?php echo $dadosFot[$cF]['desc_foto']; ?>                                 
+                                                                            
+                                  </p>
+                                  </div>
+                          </div>
+                      <?php  $cF++; } ?>
+                    
+                          
+                          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                          <a class="next1" onclick="plusSlides(1)">&#10095;</a>
+                      </div>      
+            </main>
+
+<div id="branco" style="width: 50%;height: 70px"></div>
